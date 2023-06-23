@@ -1,6 +1,28 @@
 html,body{
     margin: 0;
     padding: 0;
-    background: url(../images/login_bg.jpg) no-repeat;
+    background: url(../images/login_bg.jpg)  no-repeat;
     background-size: cover;
+}
+.loginANDreg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:#fff ;
+    height: 400px;
+    width: 600px;
+}
+.loginANDreg .title-box{
+    background:url(../images/login_title.png) no-repeat center;
+    height: 80px;
+    width: 600px;
+}
+.loginANDreg .reg-box{
+    display: none;
+}
+
+.reg-login,.login-reg{
+    display: flex;
+    justify-content: flex-end;
 }
