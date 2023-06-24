@@ -6,4 +6,11 @@ $.ajaxPrefilter(function(options){
     console.log(options.url);
     options.url = "http://hmajax.itheima.net/"+options.url
     console.log(options.url);
+    if(options.url.indexOf('/my')!=-1){
+        options.header ={
+            Authorization:localStorage.getItem("token")||''
+    }
+
+    }
+   
 })

@@ -71,7 +71,7 @@ $(function(){
             console.log(e);
             layer.msg("登陆成功");
             localStorage.setItem("token",'12322esxsx');
-            // location.href = './index.html'  
+            location.href = './index.html'  
         },
         error:function(e){
             console.log(JSON.parse(e.responseText));
