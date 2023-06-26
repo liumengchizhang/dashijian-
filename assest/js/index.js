@@ -1,8 +1,7 @@
 $(function () {
+
+    getPersonmsg();
     var layer = layui.layer;
-    $(".layui-input").on('change',function(){
-        getPersonmsg();
-    })
     $("#btnlogout").on("click",function(){
         layer.confirm('确定要退出吗？', {icon: 3, title:'提示'}, function(index){
             //do something
@@ -20,12 +19,12 @@ function getPersonmsg() {
         type: "GET",
         url: "api/settings",
         data: {
-            creator: $(".layui-input").val(),
+            creator: "溜溜liuliu001",
         },
         success: function (e) {
-            // var name = nickname||desc;
+            // var name = e.nickname||e.desc;
             // console.log(name);
-          renderingAvatar(e.data);
+            renderingAvatar(e.data);
         },
         complete:function(e){
             console.log(e);
