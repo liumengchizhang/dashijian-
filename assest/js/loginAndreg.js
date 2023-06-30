@@ -70,12 +70,13 @@ $(function(){
         success:function(e){
             console.log(e);
             layer.msg("登陆成功");
-            localStorage.setItem("token",'12322esxsx');
+            localStorage.setItem("token",'98e27b86-1541-468d-a334-fa5350443651');
             location.href = './index.html'  
         },
         error:function(e){
-            console.log(JSON.parse(e.responseText));
-            layer.msg(JSON.parse(e.responseText).message);
+            console.log(e);
+            // console.log(JSON.parse(e.responseText));
+            // layer.msg(JSON.parse(e.responseText).message);
              
             }
             

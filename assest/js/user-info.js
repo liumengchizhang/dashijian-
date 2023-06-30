@@ -11,38 +11,6 @@ $(function () {
         e.preventDefault();
         console.log("okkkk");
         putUserPerson();
-
-        //     axios({
-        //         method: "PUT",
-        //         url: "http://hmajax.itheima.net/api/settings",
-        //         data: {
-        //             avatar: "http://hmajax.itheima.net/avatar/avatar1.png",
-        //             desc: $("#form1 [name=desc]").val(),
-        //             email: $("#form1 [name=email]").val(),
-        //             gender: +$("#form1 [name=gender]").val(),
-        //             nickname: $("#form1 [name=nickname]").val(),
-        //             creator: "我是溜溜liuliu001"
-        //         },
-        //         // success: function (e) {
-        //         //     console.log(e);
-
-        //         // },
-        //         // error: function (e) {
-        //         //     console.log(e.responseJSON.message);
-        //         //     layui.layer.msg(e.responseJSON.message, { icon: 2 })
-
-        //         // }
-        //     }).then(e=>{
-        //      console.log(e);
-        //      window.parent.getUserPerson();
-        //      layui.layer.msg(e.data.message, { icon: 6 });
-
-        //     }).catch(e=>{
-        //         console.log(e.response.data.message);
-        //         layui.layer.msg(e.response.data.message, { icon: 2 });
-
-        //     });
-
     })
 
 

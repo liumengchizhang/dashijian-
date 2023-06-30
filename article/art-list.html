@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../assest/layui/css/layui.css">
+  <link rel="stylesheet" href="../assest/css/art-list.css">
+  <link rel="stylesheet" href="../assest/css/art-pub.css">
+</head>
+
+<body>
+  <div class="layui-card">
+    <div class="layui-card-header">文章列表</div>
+    <div class="layui-card-body">
+      <!-- 分类 -->
+      <form class="layui-form" id="form">
+        <div class="layui-form-item layui-inline">
+          <select name="choose" class="layui-inline choose" id="demo1">
+          </select>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <select name="status" class="layui-inline">
+            <option value="">全部</option>
+            <option value="0">草稿</option>
+            <option value="1">待审核</option>
+            <option value="2">审核通过</option>
+            <option value="3">审核失败</option>
+          </select>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <button type="submit" class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+        </div>
+      </form>
+      <!-- 标题 -->
+      <table class="layui-table">
+        <colgroup>
+          <col width="150">
+          <col width="200">
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>文章标题</th>
+            <th>封面</th>
+            <th>发表时间</th>
+            <th>状态</th>
+            <th>阅读量</th>
+            <th>评论数</th>
+            <th>点赞数</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <!-- 分页 -->
+      <div id="test1"></div>
+    </div>
+  </div>
+  <!-- 利用模板引擎渲染表格的内容 -->
+  <script type="text/html" id="art-table">
+         {{each results}}
+            <tr>
+                <td>{{$value.title}}</td>
+                <td>
+                    <img src="{{$value.cover.images[0]}}" alt="">
+                </td>
+                <td>{{$value.pubdate}}</td>
+                <td class="status">    
+                  {{$value.status|fliterName}}</td>
+                <td>{{$value.read_count}}</td>
+                <td>{{$value.comment_coun}}</td>
+                <td>{{$value.like_count}}</td>
+                <td>
+                    <button type="button" class="layui-btn layui-btn-sm art-edit" data-id="{{$value.id}}" id="art-edit">编辑</button>
+                    <button type="button" class="layui-btn layui-btn-danger layui-btn-sm art-delete"  data-id="{{$value.id}}">删除</button>
+                </td>
+
+            </tr>
+         {{/each}}
+      </script>
+  <!-- //选择文章的频道 -->
+  <script type="text/html" id="artsprts-choose">
+        <option value="">所有的内容</option>
+        {{each channels}}
+        <option value="{{$value.id}}">{{$value.name}}</option>
+        {{/each}}
+  </script>
+<script>
+ 
+</script>
+  <script src="../assest/lib/jQuery-min.js"></script>
+  <script src="../assest/layui/layui.js"></script>
+  <script src="../assest/lib/template-web.js"></script>
+  <script src="../assest/js/art-list.js"></script>
+</body>
+
+</html>
